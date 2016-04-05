@@ -59,6 +59,12 @@ func letterToNumber(letter string) string {
 		return "25"
 	case "Z":
 		return "26"
+	case "Ä":
+		return "27"
+	case "Ö":
+		return "28"
+	case "Ü":
+		return "29"
 	default:
 		return "0"
 	}

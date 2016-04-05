@@ -63,6 +63,12 @@ func backTranslation(number string) string {
 		return "Y"
 	case "26":
 		return "Z"
+	case "27":
+		return "Ä"
+	case "28":
+		return "Ö"
+	case "29":
+		return "Ü"
 	default:
 		return "?"
 	}
