@@ -1,8 +1,11 @@
 package main
 
-import "unicode/utf8"
+import (
+	"fmt"
+	"unicode/utf8"
+)
+
 import "strings"
-import "fmt"
 
 //	Please note that the decryption algorithm doesn't work all fine yet.
 
@@ -75,30 +78,47 @@ func decryption(encryptedWord string) string {
 	var ignoreNext = false
 
 	for i := 0; i < wordLength; i++ {
-		if wordAsArray[i] != " " && wordAsArray[i] != "-" {
-			var nextIndex = i + 1
-			if wordAsArray[nextIndex] != " " && wordAsArray[nextIndex] != "-" {
-				// Do extensional stuff & normal stuff
-				var twoNumbers = wordAsArray[i] + wordAsArray[nextIndex]
-				newWord = newWord + backTranslation(twoNumbers)
-				ignoreNext = true
-			} else {
-				if ignoreNext != false {
-					ignoreNext = false
-				} else {
-					newWord = newWord + backTranslation(wordAsArray[i])
+
+		if ignoreNext == false {
+
+			if wordAsArray[i] != "-" && wordAsArray[i] != " " {
+
+				next := i + 1
+				joined := ""
+				currentLetter := wordAsArray[i]
+
+				joined = joined + currentLetter
+
+				if wordAsArray[next] != "-" && wordAsArray[i] != " " {
+
+					nextLetter := wordAsArray[next]
+					joined = joined + nextLetter
+					ignoreNext = true
+
 				}
+
+				newWord = newWord + backTranslation(joined)
+
+			} else if wordAsArray[i] == "-" {
+
+				fmt.Println("Space")
+
+			} else if wordAsArray[i] == " " {
+
+				newWord = newWord + " "
+
 			}
 
-		} else if wordAsArray[i] == "-" {
-			fmt.Println("Score!")
-		} else if wordAsArray[i] == " " {
-			fmt.Println("Space!")
+		} else {
+
+			ignoreNext = false
+
 		}
+
 	}
 
-	fmt.Println(newWord)
 	return newWord
+
 }
 
 func main() {
