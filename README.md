@@ -7,6 +7,11 @@ Passed in letters will be translated to their position in the alphabet, meaning 
 
 Unkown characters will be translated to '0', since there is no letter '0'. In the translation back to original, 0 will be translated to '?'.  
 
+What is included?
+=================
+
+Here you can find the encryption & decryption algorithms written in Go, but also the encryption algorithm written in Swift. The Swift variant uses own-made extensions, such as computed properties like toNumber, to turn letters (of type String) to numbers (of type Int), toLetter (the other way around), amount (instead of characters.count) and amountForIndex (amount of characters for loops and so on).
+
 How can I run it?
 =================
 
