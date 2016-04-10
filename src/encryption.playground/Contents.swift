@@ -11,7 +11,7 @@ extension String {
     }
     
     // The amount of characters - 1 (Example: For index in a for-loop)
-    var amountIndex: Int {
+    var amountForIndex: Int {
         return self.characters.count - 1
     }
     
@@ -161,12 +161,12 @@ func encryption(word: String) -> String {
     var wordArray = Array(word.characters)
     var newWord = ""
     
-    for i in 0...word.amountIndex {
+    for i in 0...word.amountForIndex {
         
         var currentLetter: String = String(wordArray[i])
         newWord += "\(currentLetter.toNumber!)"
         
-        if i != word.amountIndex {
+        if i != word.amountForIndex {
             newWord += "-"
         }
         
