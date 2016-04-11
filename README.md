@@ -1,25 +1,62 @@
 #Anshouka
 暗証化 (あんしょうか) - Anshōka: encryption; coding; password
 
-Some time ago, I have sent a cryptic message to my girlfriend. She got the trick behind it really quickly, still do we sometimes use it out of fun.
+Anshouka contains a simple letter-number code written in Swift and Go. You can use them for fun things, as well as giving your friends (a little) harder time understanding you.  
 
-Passed in letters will be translated to their position in the alphabet, meaning this tool does support just A-Z, but also German umlauts like 'Ä', 'Ö' and 'Ü', which will be translated to 'ae', 'oe' and 'ue'. Characters like 'ō' & ū from Romaji (Japanese with latin characters), are not supported yet.
-
-Unkown characters will be translated to '0', since there is no letter '0'. In the translation back to original, 0 will be translated to '?'.  
-
-What is included?
+Story
 =================
 
-Here you can find the encryption & decryption algorithms written in Go, but also the encryption algorithm written in Swift. The Swift variant uses own-made extensions, such as computed properties like toNumber, to turn letters (of type String) to numbers (of type Int), toLetter (the other way around), amount (instead of characters.count) and amountForIndex (amount of characters for loops and so on).
+Back at the start of the year, I have sent a cryptic message to my girlfriend that used the (easy) letter-number code mentioned before. She got it right away, but at first, I told her her idea of it being the letter-number code was wrong (All though she was obviously right).
 
-How can I run it?
+Today, we both do sometimes send these messages, since we both understand how to read them and have the tools to easily encipher and decipher messages.
+
+How it works
 =================
 
-1. Install [Go](https://golang.org/dl/) on your computer
+You get two files for each Swift and Go, which contain functions for both enciphering and deciphering. Simply implement the files in your project, call the needed function and enter the fitting message. This can be applied to a lot of use-cases.
+<br><br>
+Swift examples:
+
+```swift
+encipher("Hello")
+```
+
+```swift
+decipher("8-5-12-12-15")
+```
+<br>
+Go examples:
+```go
+encryption("Hello")
+```
+
+```go
+decryption("8-5-12-12-15")
+```
+
+
+How to run it
+=================
+
+In the Swift variant, you do not have to just grab the functions out of the project and implement them, instead you have to implement the whole files, since they contain own-made extensions:
+
+String
+<br><ul>
+<li>toNumber: Returns an Integer that represents the letter's position in the alphabet.</li>
+<li>loopValue: Returns an Integer that can be used for going through a string, for example in a for-loop (=string.characters.count - 1)</li></ul>
+
+Int
+<br><ul>
+<li>toLetter: Returns a string (=letter) that is found at the position in the alphabet.</li></ul>
+
+
+In the Go variant, you do of course need to [install Go](https://golang.org/dl/) on your machine first. After this follow these steps:
+
+1. Select a folder you want the files to be in `cd /Users/username/Documents`
 2. Clone this repository: `git clone https://github.com/miyohiki/alphanumeric.git`
-3. Select the local repository: `cd alphanumeric`
-4. Run a program: `go run encryption.go'`
+3. Select the go folder in local repo: `cd /Anshouka-master/src/go`
+4. Run a program: `go run encryption.go`
+
 
 =================
-
 Ideas for the extension of the characters please to lukasamueller@icloud.com.
