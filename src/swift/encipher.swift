@@ -157,11 +157,16 @@ func encipher(word: String) -> String {
     
     for i in 0...word.loopValue {
         
-        var currentLetter: String = String(wordArray[i])
-        newWord += "\(currentLetter.toNumber!)"
-        
-        if i != word.loopValue {
-            newWord += "-"
+        if wordArray[i] != " " {
+            var currentLetter: String = String(wordArray[i])
+            newWord += "\(currentLetter.toNumber!)"
+            
+            var ni = i + 1
+            if i != word.loopValue && wordArray[ni] != " "  {
+                newWord += "-"
+            }
+        } else {
+            newWord += " "
         }
         
     }
