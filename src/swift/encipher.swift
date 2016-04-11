@@ -3,27 +3,6 @@
 import UIKit
 import Foundation
 
-func encipher(word: String) -> String {
-    
-    var wordArray = Array(word.characters)
-    var newWord = ""
-    
-    for i in 0...word.loopValue {
-        
-        var currentLetter: String = String(wordArray[i])
-        newWord += "\(currentLetter.toNumber!)"
-        
-        if i != word.loopValue {
-            newWord += "-"
-        }
-        
-    }
-    
-    return newWord
-}
-
-encipher("Hello")
-
 extension String {
     
     // The amount of characters of a word
@@ -170,3 +149,24 @@ extension Int {
     }
     
 }
+
+func encipher(word: String) -> String {
+    
+    var wordArray = Array(word.characters)
+    var newWord = ""
+    
+    for i in 0...word.loopValue {
+        
+        var currentLetter: String = String(wordArray[i])
+        newWord += "\(currentLetter.toNumber!)"
+        
+        if i != word.loopValue {
+            newWord += "-"
+        }
+        
+    }
+    
+    return newWord
+}
+
+encipher("Hello")
