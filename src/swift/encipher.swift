@@ -3,6 +3,27 @@
 import UIKit
 import Foundation
 
+func encipher(word: String) -> String {
+    
+    var wordArray = Array(word.characters)
+    var newWord = ""
+    
+    for i in 0...word.loopValue {
+        
+        var currentLetter: String = String(wordArray[i])
+        newWord += "\(currentLetter.toNumber!)"
+        
+        if i != word.loopValue {
+            newWord += "-"
+        }
+        
+    }
+    
+    return newWord
+}
+
+encipher("Hello")
+
 extension String {
     
     // The amount of characters of a word
@@ -11,7 +32,7 @@ extension String {
     }
     
     // The amount of characters - 1 (Example: For index in a for-loop)
-    var amountForIndex: Int {
+    var loopValue: Int {
         return self.characters.count - 1
     }
     
@@ -149,30 +170,3 @@ extension Int {
     }
     
 }
-
-extension UIColor {
-    static func RGB(red: CGFloat, green: CGFloat, blue: CGFloat) -> UIColor {
-        return UIColor(red: red/255.0, green: green/255.0, blue: blue/255.0, alpha: 1.0)
-    }
-}
-
-func encryption(word: String) -> String {
-    
-    var wordArray = Array(word.characters)
-    var newWord = ""
-    
-    for i in 0...word.amountForIndex {
-        
-        var currentLetter: String = String(wordArray[i])
-        newWord += "\(currentLetter.toNumber!)"
-        
-        if i != word.amountForIndex {
-            newWord += "-"
-        }
-        
-    }
-    
-    return newWord
-}
-
-encryption("Hello")
