@@ -156,23 +156,23 @@ func decipher(word: String) -> String {
     
     for i in 0...word.loopValue {
         if ignore == false {
-        if chars[i] != " " && chars[i] != "-" {
-            
-            var new = String(chars[i])
-            var ni = i + 1
-            
-            if ni != word.amount {
-                if chars[ni] != " " && chars[ni] != "-" {
-                    new += String(chars[ni])
-                    ignore = true
+            if chars[i] != " " && chars[i] != "-" {
+                
+                var new = String(chars[i])
+                let ni = i + 1
+                
+                if ni != word.amount {
+                    if chars[ni] != " " && chars[ni] != "-" {
+                        new += String(chars[ni])
+                        ignore = true
+                    }
                 }
+                
+                result += (Int(new)?.toLetter)!
+                
+            } else if chars[i] == " " {
+                result += " "
             }
-            
-            result += (Int(new)?.toLetter)!
-            
-        } else if chars[i] == " " {
-            result += " "
-        }
         } else {
             ignore = false
         }
@@ -181,4 +181,4 @@ func decipher(word: String) -> String {
     return result
 }
 
-decipher("2-26-23")
+decipher("8-5-12-12-15")
