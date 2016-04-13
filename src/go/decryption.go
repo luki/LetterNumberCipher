@@ -7,8 +7,6 @@ import (
 
 import "strings"
 
-//	Please note that the decryption algorithm doesn't work all fine yet.
-
 func backTranslation(number string) string {
 	switch number {
 	case "1":
@@ -76,57 +74,36 @@ func backTranslation(number string) string {
 
 func decryption(encryptedWord string) string {
 
-	var wordLength int = utf8.RuneCountInString(encryptedWord)
+	ignore := false
+	chars := strings.Split(encryptedWord, "")
+	var charAmount int = utf8.RuneCountInString(encryptedWord)
+	result := ""
 
-	wordAsArray := strings.Split(encryptedWord, "")
-	newWord := ""
-
-	var ignoreNext = false
-
-	for i := 0; i < wordLength; i++ {
-
-		if ignoreNext == false {
-
-			if wordAsArray[i] != "-" && wordAsArray[i] != " " {
-
-				next := i + 1
-				joined := ""
-				currentLetter := wordAsArray[i]
-
-				joined = joined + currentLetter
-
-				if wordAsArray[next] != "-" && wordAsArray[i] != " " {
-
-					nextLetter := wordAsArray[next]
-					joined = joined + nextLetter
-					ignoreNext = true
-
+	for i := 0; i < charAmount; i++ {
+		if ignore == false {
+			if chars[i] != " " && chars[i] != "-" {
+				var new = chars[i]
+				var ni = i + 1
+				if ni != charAmount {
+					if chars[ni] != " " && chars[ni] != "-" {
+						new += chars[ni]
+						ignore = true
+					}
 				}
-
-				newWord = newWord + backTranslation(joined)
-
-			} else if wordAsArray[i] == "-" {
-
-				fmt.Println("Space")
-
-			} else if wordAsArray[i] == " " {
-
-				newWord = newWord + " "
-
+				result += backTranslation(new)
+			} else if chars[i] == " " {
+				result += " "
 			}
-
 		} else {
-
-			ignoreNext = false
-
+			ignore = false
 		}
 
 	}
 
-	return newWord
+	return result
 
 }
 
 func main() {
-	decryption("8-5-12-12-15 8-5")
+	fmt.Println(decryption("8-5-12 3-2"))
 }
