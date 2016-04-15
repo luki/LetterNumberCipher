@@ -1,7 +1,6 @@
-#Anshouka
-暗証化 (あんしょうか) - Anshōka: encryption; coding; password
+#Jikaeru
 
-Anshouka contains a simple letter-number code written in Swift and Go. You can use them for fun things, as well as giving your friends (a little) harder time understanding you.  
+Jikaeru contains a simple letter-number code written in Swift and Go. You can use them for fun things, as well as giving your friends (a little) harder time understanding you.  
 
 Story
 =================
@@ -53,8 +52,8 @@ Int
 In the Go variant, you do of course need to [install Go](https://golang.org/dl/) on your machine first. After this follow these steps:
 
 1. Select a folder you want the files to be in `cd /Users/username/Documents`
-2. Clone this repository: `git clone https://github.com/miyohiki/alphanumeric.git`
-3. Select the go folder in local repo: `cd /Anshouka-master/src/go`
+2. Clone this repository: `git clone https://github.com/miyohiki/jikaeru.git`
+3. Select the go folder in local repo: `cd /Jikaeru-master/src/go`
 4. Run a program: `go run encryption.go`
 
 
