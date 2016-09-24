@@ -1,18 +1,16 @@
-#Jikaeru
+#Numcipher
 
-Jikaeru contains a simple letter-number code written in Swift and Go. You can use them for fun things, as well as giving your friends (a little) harder time understanding you.  
+Numcipher includes simple letter-number enciphering & deciphering algorithms written in Swift 2.0 and Go. You can use them for fun, as well as giving your friends a harder time understanding you.  
 
-Story
-=================
+##Story
 
 Back at the start of the year, I have sent a cryptic message to my girlfriend that used the (easy) letter-number code mentioned before. She got it right away, but at first, I told her her idea of it being the letter-number code was wrong (All though she was obviously right).
 
 Today, we both do sometimes send these messages, since we both understand how to read them and have the tools to easily encipher and decipher messages.
 
-How it works
-=================
+##How it works
 
-You get two files for each Swift and Go, which contain functions for both enciphering and deciphering. Simply implement the files in your project, call the needed function and enter the fitting message. This can be applied to a lot of use-cases.
+You get two files for each Swift and Go, which contain functions for both enciphering and deciphering Strings. Simply implement the files in your project, call the needed function(s) and enter a message. This can be applied to a lot of use-cases.
 <br><br>
 Swift examples:
 
