@@ -39,7 +39,7 @@ Go requires to have it [installed](https://golang.org/dl/) on the machine it sho
 
 1. Select a folder for placing files `cd /Users/username/Documents`
 2. Clone this repository: `git clone https://github.com/luki/numcipher.git`
-3. Select the Go folder in local repository: `cd /Jikaeru-master/src/go`
+3. Select the Go folder in local repository: `cd /Numcipher-master/src/go`
 4. Run a program: `go run encryption.go`
 
 ####Examples
