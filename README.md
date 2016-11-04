@@ -1,6 +1,6 @@
 #Numcipher
 
-This repository includes simple letter-number enciphering & deciphering algorithms written in Swift 3.0 and Go. Everyone is
+This repository includes simple letter-number enciphering & deciphering algorithms written in Dart, Swift 3.0 and Go. Everyone is
 **allowed to implement** them into any project, may it be **comercially or not**.
 
 ##Background
