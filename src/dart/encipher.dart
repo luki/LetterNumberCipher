@@ -83,6 +83,7 @@ void encipher(String word) {
     }
   }
   print(new_word);
+  return new_word;
 }
 
 main() {
